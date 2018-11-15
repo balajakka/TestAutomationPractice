@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -56,7 +57,7 @@ public class AccessWebsite {
     }
     @When("^I access booking.com$")
     public void step6(){
-        driver.get("https://www.booking.com");
+        driver.get("https://www.santander.co.uk/");
     }
 
     @Then("^I see booking.com Home page$")
@@ -68,11 +69,31 @@ public class AccessWebsite {
     @Then("^I see WhereAreYouGoing input box$")
     public void i_see_whereAreGoing_input(){
 
-        WebElement whereAreYouGoingInputBox;
-        whereAreYouGoingInputBox= driver.findElement(By.xpath("//input[@placeholder=\"Where are you going?\"]"));
-        Assert.assertEquals(whereAreYouGoingInputBox.isDisplayed(),true);
-        whereAreYouGoingInputBox.sendKeys("Paris");
-        driver.quit();
+ //       WebElement whereAreYouGoingInputBox;
+  //      whereAreYouGoingInputBox= driver.findElement(By.xpath("//input[@placeholder=\"Where are you going?\"]"));
+ //       Assert.assertEquals(whereAreYouGoingInputBox.isDisplayed(),true);
+        //whereAreYouGoingInputBox.sendKeys("Paris");
+        //driver.quit();
+        System.out.println("test passed");
+    }
+
+    @And("^I see See today's great deals link$")
+    public void step8(){
+
+   //     WebElement greatDealsLinkText;
+
+   //     greatDealsLinkText = driver.findElement(By.linkText("See today's great deals"));
+    //    greatDealsLinkText.click();
+    //    Assert.assertEquals(greatDealsLinkText.isDisplayed(),true);
+
+        WebElement registerButton;
+    //    inputBox = driver.findElement(By.id("ss"));
+        registerButton = driver.findElement(By.name("query"));
+        Assert.assertEquals(registerButton.isDisplayed(),true);
+  //      inputBox.sendKeys("paris");
+        registerButton.click();
+
+
     }
 
 

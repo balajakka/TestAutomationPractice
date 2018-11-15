@@ -19,3 +19,4 @@ Feature: Access Websites through internet
     Given I am a Google chrome user
     When I access booking.com
     Then I see WhereAreYouGoing input box
+    And I see See today's great deals link
