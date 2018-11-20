@@ -14,7 +14,9 @@ public class HookTest {
     @Before
     public void beforeScenario(){
         System.out.println("This will run before the Scenario");
-        System.setProperty("webdriver.chrome.driver", "./src/test/java/chromedriver");
+        //System.setProperty("webdriver.chrome.driver", "./src/test/java/chromedriver");
+        System.setProperty("webdriver.chrome.driver", new ConfigFileReader().getDriverPath()+"chromedriver");
+
         driver = new ChromeDriver();
 
     }

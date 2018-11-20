@@ -1,10 +1,12 @@
 package StepDefinitions;
 
 
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 import static StepDefinitions.HookTest.driver;
 
@@ -52,11 +54,27 @@ public class AccessWebsite {
 
     }
 
+    @And("I click Register button")
+    public void step9(){
+
+        driver.findElement(By.xpath("//span[contains(text(),'Register')]")).click();
+
+    }
+
+    //span[contains(text(),'Register')]
+
     @Then("^I see \"([^\"]*)\" Home page$")
     public void step9(String arg){
         Assert.assertEquals(driver.getTitle().contains(arg), true);
 
     }
+
+    @Then("^I see Register form$")
+    public void step10(){
+        System.out.println("Test Passed");;
+
+    }
+
 
 
 }
